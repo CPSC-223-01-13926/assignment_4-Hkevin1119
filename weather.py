@@ -1,4 +1,4 @@
-from calendar import calendar
+import calendar
 import json
 
 def read_data(filename):
@@ -57,13 +57,13 @@ def report_daily(data, date):
     display = display + "====================  ========  ===========  ========  ======== \n"
     for key in data:
         if date == key[0:8]:
-            m = calendar.month_name[int(date[4:6])] + " " + calendar.day_name[str(int(date[6:8]))] + "," + str(int(date[0:4]))
+            m = calendar.month_name[int(date[4:6])] + " " + calendar.day_name[int(date[7:8])] + "," + str(int(date[0:4]))
             tm = key[8:10] + ":" + key[10:12] + ":" + key[12:14]
             t = data[key]['t']
             h = data[key]['h']
             r = data[key]['r']
     
-    display = display + f'{m:22}{tm:8}{t:13}{h:10}{r:10:2f}\n'
+    display = display + f'{m:22}{tm:8}{t:13}{h:10}{r:10:2f}' + "\n"
     return display
 
 def report_historical(data):

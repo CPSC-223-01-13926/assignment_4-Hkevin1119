@@ -12,7 +12,7 @@ while(True):
     print("9. Exit the program")
     print()
 
-    myChoice = input("Enter menu choice: ")
+    myChoice = int(input("Enter menu choice: "))
     print()
 
     if myChoice == 1:
@@ -20,7 +20,7 @@ while(True):
         weather = read_data(myFile)
     elif myChoice == 2:
         weatherDate = input("Enter date (YYYYMMDD): ")
-        weatherTime = input("Enter time (HHMMSS): ")
+        weatherTime = input("Enter time (hhmmss): ")
         weatherTemp = int(input("Enter temperature: "))
         weatherHumid = int(input("Enter humidity: "))
         weatherRain = float(input("Enter rainfall: "))
